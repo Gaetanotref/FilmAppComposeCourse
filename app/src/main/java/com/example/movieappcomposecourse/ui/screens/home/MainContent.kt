@@ -7,22 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.movieappcomposecourse.model.Movie
+import com.example.movieappcomposecourse.model.getMovies
 import com.example.movieappcomposecourse.ui.navigation.MovieScreens
-import com.example.movieappcomposecourse.ui.presentation.MovieRow
+import com.example.movieappcomposecourse.ui.widget.MovieRow
 
 @Composable
 fun MainContent(
-    modifier: Modifier = Modifier,
-    movieList: List<String> = listOf(
-        "Avatar",
-        "Shutter Island",
-        "Film 3",
-        "film 4",
-        "film 5",
-        "film 6",
-        "film 7",
-        "film 8"
-    ),
+    movieList: List<Movie> = getMovies(),
     navController: NavController
 ) {
     LazyColumn(modifier = Modifier.padding(12.dp)) {
